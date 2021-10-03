@@ -1,0 +1,27 @@
+db.infoAutores.insertOne({
+  nome: "Yan Orestes",
+  email: "yan@caelum.com",
+  senha: "yan1234",
+  descricao: "Instrutor e desenvolvedor na Alura"
+})
+
+var autorInfo = db.infoAutores.findOne({
+  email: "yan@caelum.com",
+})
+
+db.artigos.insertOne({
+  autor: {
+    nome: autorInfo.nome,
+    descricao: autorInfo.descricao,
+    id_info: autorInfo._id,
+  },
+  slug: "dicas-politicas-de-senha2",
+  titulo: "Algumas dicas importantes sobre políticas de senhas",
+  conteudo: "Algumas dicas importantes sobre políticas de senhas. Alguns usuários estavam usando senhas fracas para suas própiras contas",
+  dataCriado: ISODate('2021-07-18'),
+  categorias: [
+    'Arquitetura',
+    'Programação'
+  ],
+  comentarios: []
+})
