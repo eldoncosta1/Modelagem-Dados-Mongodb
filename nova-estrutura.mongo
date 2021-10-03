@@ -1,0 +1,14 @@
+db.artigos.insertOne({
+  autor: {
+    nome: "Eldon Costa",
+    descricao: "Desenvolvedor na Compasso UOL",
+    email: "eldon.costa@compasso.com.br",
+    senha: "123456"
+  },
+  slug: "projeto-caelum-nas-faculdades",
+  titulo: "Projeto Caelum nas Faculdades",
+  conteudo: "A prática cotidiana prova que a hegemonia do ambiente político aponta para a melhoria do orçamento setorial.",
+  dataCriado: ISODate('2019-06-04'),
+})
+
+db.artigos.find({ slug: "projeto-caelum-nas-faculdades" })

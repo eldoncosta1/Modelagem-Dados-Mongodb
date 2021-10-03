@@ -1,0 +1,11 @@
+db.autores.update({ nome: "Bruna" }, { $set: {
+    artigos: [
+      {
+        slug: "projeto-caelum-nas-faculdades",
+        titulo: "Projeto Caelum nas Faculdades",
+        conteudo: "A prática cotidiana prova que a hegemonia do ambiente político aponta para a melhoria do orçamento setorial.",
+        dataCriado: ISODate('2019-06-04'),
+      }
+    ]
+  }
+})

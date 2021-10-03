@@ -1,0 +1,12 @@
+db.autores.insertOne({
+  nome: "Eldon Costa",
+  descricao: "Desenvolvedor na Compasso UOL",
+  email: "eldon.costa@compasso.com.br",
+  senha: "123456"
+})
+
+db.autores.insertOne({
+  nome: "Bruna",
+  descricao: "Medica",
+  email: "brunahoffmann.univasf@gmail.com"
+})
