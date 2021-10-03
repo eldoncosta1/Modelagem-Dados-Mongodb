@@ -25,3 +25,29 @@ db.artigos.insertOne({
   ],
   comentarios: []
 })
+
+var documento = db.artigos.findOneAndUpdate({
+  slug: "dicas-politicas-de-senha2"
+}, { 
+  $push: {
+    comentarios: {
+      $each: [
+        {
+          nome: "Eldon",
+          email: "eldoncosta1@gmail.com",
+          texto: "Achei muito legal esse artigo",
+          data: ISODate('2021-10-04')
+        }
+      ],
+      $position: 0
+    }
+  }
+}, { returnNewDocument: true})
+
+db.comentarios.insertOne({
+  id_artigo: documento._id,
+  nome: "Eldon",
+  email: "eldoncosta1@gmail.com",
+  texto: "Achei muito legal esse artigo",
+  data: ISODate('2021-10-04')
+})
